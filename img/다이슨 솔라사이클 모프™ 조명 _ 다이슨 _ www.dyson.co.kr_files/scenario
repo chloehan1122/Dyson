@@ -1,0 +1,132 @@
+window.DigitalFeedback['https://digitalfeedback.euro.confirmit.com/api/digitalfeedback/loader/prod/scenario?programKey=Ssuwij&scenarioId=7369&programVersion=6'] = function (api) {
+(function(){
+    var ctx = api();
+    function getVal(x) { if (x instanceof Function) { return x(); } return x; }
+ 
+    function userfunc2709(ctx, Survey, Invite, completesDay, pageViews, CookieExpirationDays, nthVisitor, excludePages) {
+var fn = function () {
+console.log(l);
+//Stop if within cookie expiration period
+if (window.ConfirmitCookies.get('ConfirmitSurveyShown'))
+	return;
+
+var isnthVisitor = Math.random() < 1/nthVisitor;
+console.log(isnthVisitor);
+    if (!isnthVisitor)
+        return;
+
+//Stop if not enough pages viewed
+var pageCount = +sessionStorage.getItem('visited_page_count');
+sessionStorage.setItem('visited_page_count', ++pageCount);
+if (pageCount < pageViews)
+  return;
+
+var pagesVisited = JSON.parse(sessionStorage.getItem('confirmitPagesVisited'));
+
+var pageCodes = Object.getOwnPropertyNames(excludePages);
+for (var i = 0; i < pageCodes.length; i++)
+{
+	var pageURL = excludePages[pageCodes[i]];
+  	var pattern = new RegExp (pageURL);
+	var isPage = pattern.test(document.location.href);
+	if (isPage)
+    {
+		console.log('page found');
+ 	    return;
+    }
+}
+
+//Cookie expiration in days
+var cookieExpiration = 60*60*24*CookieExpirationDays;
+
+//Get time difference in milliseconds
+milliesecnds = new Date().getTime() - sessionStorage.getItem('startTime');
+//Convert milliseconds to minutes and seconds
+var timeOnSite = millisToMinutesAndSeconds(milliesecnds);
+console.log('timeOnSite - ' + timeOnSite);
+
+//Dummy container if mobile / Container 1 if desktop
+var cont
+if (getDeviceType() == 'Mobile') {
+	cont="dummy for mobile"
+} else {
+	cont="Container 1"
+}
+
+//Daily quota
+api().loadCountersAsync().then(onCountersLoaded);
+function onCountersLoaded(ctx) {
+  var counters = ctx.scenarioCounters(Survey);
+     if (counters.completesCurrentDay >= completesDay)
+     return;
+}
+
+
+getuserStatus();
+
+    const adobeAnalyticsInfo = (function () {
+        try {
+            return {
+                analyticsAccount: s.account,
+                analyticsServer: s.trackingServerSecure,
+                analyticsVisitorId: s.visitor.getAnalyticsVisitorID(),
+                marketingCloudVisitorId: s.visitor.getMarketingCloudVisitorID(),
+            };
+        } catch (e) {
+            return {
+                analyticsAccount: '',
+                analyticsServer: '',
+                analyticsVisitorId: '',
+                marketingCloudVisitorId: '',
+            };
+        }
+    })();
+  
+var ctx = 
+  api()
+	.invite(Invite)
+	.container(cont)//switches dependent on desktop vs mobile, so not templated
+	.survey(Survey)
+	.data({
+		'sBrowserCode': sBrowserCode,
+      	'DFdeviceType': getDeviceType(),
+		'loggedIn': loggedIn,
+		'email': email,
+		'UserID': UserID,
+	    'numPages': numPages,
+      	'cleanTitle': cleanTitle,
+     	'timeOnSite': timeOnSite,
+      	'url': document.location.href,
+        'referPage': referPage,
+      	'Market': 32,
+      	'languageCode': languageCode,
+      	'l':l,
+      	'pagesVisited': pagesVisited,
+         analyticsAccount: adobeAnalyticsInfo.analyticsAccount,
+         analyticsServer: adobeAnalyticsInfo.analyticsServer,
+         analyticsVisitorId: adobeAnalyticsInfo.analyticsVisitorId,
+         marketingCloudVisitorId: adobeAnalyticsInfo.marketingCloudVisitorId
+    })
+
+    .show();
+
+//below opens dummy container in new window for those using mobile devices
+if (getDeviceType() == 'Mobile') {
+
+    ctx.events.showContainer.on(
+      function(args){
+        window.open(args.surveyUrl, '_blank');
+      });
+};
+
+    window.ConfirmitCookies.set('ConfirmitSurveyShown', '1', {path : '/', expiry : cookieExpiration});
+
+};
+setTimeout(fn, 1*1000);
+}
+
+
+
+    userfunc2709(ctx, "p279361065738", "Dyson Invite Korean", 250, 3, 120, 2, {"1":"checkout","2":"sustainability","3":"press","4":"terms-of-website-use","5":"delivery-details","6":"counterfeit-machines","7":"environmental-policy","8":"dyson-hyperdymium-motor","9":"sustainability","10":"privacy-policy-addendum","11":"terms-of-sale","12":"hand-dryers","13":"supersonic-hotels-and-leisure","14":"dyson-demo","15":"dept-stores","16":"consulting","17":"service-center","18":"login","19":"547","20":"328","21":"dyson-demo-vr"})
+})();
+};
