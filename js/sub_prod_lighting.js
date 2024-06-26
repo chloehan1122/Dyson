@@ -13,8 +13,6 @@ $(document).ready(function(){
         scrTop = $(window).scrollTop()
         console.log(scrTop)
         if(scrTop >= 60){
-            // $(".bottom_h").css("position", "fixed").css("top", "10px");
-            // $(".bottomH_bg").css("position", "fixed").css("background", "#fffffff0");
             if (scrTop > 900 && scrTop < 11800){
                 $(".bottom_h").css("color", "white");
                 $(".bottom_h>h2").css("font-weight", 400);
@@ -24,9 +22,6 @@ $(document).ready(function(){
                 $(".bottom_h>h2").css("font-weight", "");
                 $(".bottomH_bg").css("background", "#fffffff0");
             }
-        }else{
-            // $(".bottom_h").css("position", "absolute").css("top", "10px").css("color", "");
-            // $(".bottomH_bg").css("position", "absolute").css("top", 0).css("background", "#fffffff0");
         }
     })
 

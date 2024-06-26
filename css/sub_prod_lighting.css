@@ -366,6 +366,13 @@ section.design .charger{
 .station_color{
     width: 100%;
     padding: 200px 0;
+    display: flex;
+    position: relative;
+}
+.station_color .sub_title {
+    position: absolute;
+    top: 25%;
+    left: 18%;
 }
 .colorTitle{
     font-size: 100px;
@@ -383,8 +390,18 @@ section.design .charger{
     line-height: 100px;
 }
 .stationColor{
-    width: 100%;
-    height: 600px;
+    width: 70%;
+    height: 100vh;
+}
+.stationColor.swiper{
+    margin-left: auto;
+    margin-right:unset;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
 }
 .train_color>li.swiper-slide img{
     width: 100%;
@@ -396,7 +413,7 @@ section.design .charger{
 }
 .btn_color{
     display: flex;
-    justify-content: center;
+    margin-top: 50px;
 }
 .btn_color>li{
     width: 100px;

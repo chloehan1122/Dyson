@@ -7,7 +7,7 @@ $(document).ready(function(){
         let originalWidth = $(".bottom_h").outerWidth(); 
         if(scrTop >= 60){
             $(".bottom_h").css("position", "fixed").css("top", "10px").css("width",originalWidth);
-            $(".bottomH_bg").css("position", "fixed").css("background", "#fffffff0");
+            $(".bottomH_bg").css("position", "fixed").css("top", 0).css("background", "#fffffff0");
         }else{
             $(".bottom_h").css("position", "absolute").css("top", "10px").css("color", "").css("width",originalWidth);
             $(".bottomH_bg").css("position", "absolute").css("top", 0).css("background", "#fffffff0");
