@@ -20,18 +20,24 @@ button{
 .allList{
     text-align: center;
 }
-.allList>a{
+.allList>a {
     font-size: 20px;
     font-weight: 500;
     color: #0071E3;
-    display: block;
+    display: flex;
     margin: 30px 0 10px 0;
+    align-items: center;
+    justify-content: center;
 }
 .allList>a::after,
 .counsel>a::after,
 .prod_price>a::after{
-    content: ">";
+    content: "";
+    background: url("../img/right_b.png") no-repeat 50% 50% / contain;
     margin-left: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
 }
 .counsel{
     display: flex;
@@ -41,11 +47,12 @@ button{
     font-size: 20px;
     font-weight: 500;
 }
-.counsel>a{
+.counsel>a {
     font-size: 20px;
     font-weight: 500;
     color: #0071E3;
-    display: block;
+    display: flex;
+    align-items: center;
 }
 /* 스페셜리스트 상담 팝업 */
 .coun_modal{
@@ -250,7 +257,7 @@ option.zone{
 }
 .prod_price>a{
     color: #0071E3;
-    display: block;
+    display: flex;
     font-size: 14px;
 }
 .footCol{

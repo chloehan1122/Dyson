@@ -288,11 +288,13 @@ footer{
 .benefit>li p{
     margin: 20px 0;
 }
-.benefit>li a{
+.benefit>li a {
     color: #0071E3;
+    margin-top: 20px;
 }
-.foot_bottom{
+.foot_bottom {
     background: #F8F8F8;
+    padding-bottom: 50px;
 }
 .foot_subTitle {
     font-size: 16px;
