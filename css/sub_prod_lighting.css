@@ -606,6 +606,7 @@ section.design .charger{
     left: calc(50% - 500px);
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 .btn_modal_prev{
 }

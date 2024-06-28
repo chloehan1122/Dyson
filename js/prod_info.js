@@ -1,24 +1,44 @@
 let scrTop = 0;
-let prodPrice = ""
 $(document).ready(function(){
 
-// price
-prodPrice = [
-    {
-        name: "솔라사이클모프조명 데스크형",
-        price: "₩720,000"
-    },
-    {
-        name: "솔라사이클모프조명 플로어 스탠드형",
-        price: "₩960,000"
-    }
-]
     // 제품 종류 - 탭메뉴
+    let prod = [
+        {
+            type: "데스크형",
+            price: "₩720,000",
+            modelN:"294618-01, 294607-01"
+        },
+        {
+            type: "플로어스탠드형",
+            price: "₩960,000",
+            modelN:"294642-01, 294624-01"
+        }
+    ]
     $(".dl_type>dt").click(function(index){
         $(".dl_type>dt").removeClass("on")
         $(this).addClass("on")
-        let activeIdx = $(this).index() 
-        console.log(activeIdx)
+        let activeIdx = ($(this).index())/2
+        console.log(activeIdx) // 0,1
+        $("#n1").html(prod[activeIdx].type)
+        $("#n2").html(prod[activeIdx].modelN)
+        
+        if(activeIdx==1){
+            $(".img_color>li:first-of-type img").attr("src", "./img/white-silver-floor-specs.png")
+            $(".img_color>li:last-of-type img").attr("src", "./img/black-black-floor-specs.png")
+        }else{
+            $(".img_color>li:first-of-type img").attr("src", "./img/White-silver-desk-fit.jpg")
+            $(".img_color>li:last-of-type img").attr("src", "./img/Black-black-desk-fit.jpg")
+        }
+
+        $(".price").html(`        
+        <p>
+        솔라사이클모프조명 ${prod[activeIdx].type}
+        </p>
+        <p>
+        ${prod[activeIdx].price}
+        </p>
+        `)
+
     })
 
     // 제품 색상 - 슬라이드
