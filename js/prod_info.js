@@ -18,16 +18,16 @@ $(document).ready(function(){
         $(".dl_type>dt").removeClass("on")
         $(this).addClass("on")
         let activeIdx = ($(this).index())/2
-        console.log(activeIdx) // 0,1
+        // console.log(activeIdx) // 0,1
         $("#n1").html(prod[activeIdx].type)
         $("#n2").html(prod[activeIdx].modelN)
         
         if(activeIdx==1){
-            $(".img_color>li:first-of-type img").attr("src", "./img/white-silver-floor-specs.png")
-            $(".img_color>li:last-of-type img").attr("src", "./img/black-black-floor-specs.png")
+            $(".img_color>li:first-of-type img").attr("src", "./img/white-silver-floor-fit.jpg")
+            $(".img_color>li:last-of-type img").attr("src", "./img/black-black-floor-fit.jpg")
         }else{
-            $(".img_color>li:first-of-type img").attr("src", "./img/White-silver-desk-fit.jpg")
-            $(".img_color>li:last-of-type img").attr("src", "./img/Black-black-desk-fit.jpg")
+            $(".img_color>li:first-of-type img").attr("src", "./img/White-silver-fit.jpg")
+            $(".img_color>li:last-of-type img").attr("src", "./img/Black-black-fit.jpg")
         }
 
         $(".price").html(`        
@@ -47,6 +47,7 @@ $(document).ready(function(){
         $(".btn_color>li").removeClass("on")
         $(this).addClass("on")
         let btn_idx = $(this).index()
+        console.log(btn_idx)
         $(".img_color>li").removeClass("on")
         $(".img_color>li").eq(btn_idx).addClass("on")
     })

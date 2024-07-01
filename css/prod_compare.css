@@ -98,13 +98,20 @@ button{
 }
 .coun_popup>ul>li{
     width: 500px;
+    height: 50%;
     overflow: hidden;
     position: relative;
 }
 .coun_popup>ul>li:hover img{
     scale: 1.1;
 }
+.coun_popup>ul>li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 .coun_popup>ul>li>a>img{
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;

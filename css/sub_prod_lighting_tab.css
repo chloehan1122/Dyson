@@ -1,31 +1,32 @@
-/* pc버전 */
-@media (min-width:1024px){
+/* 테블릿 버전 */
+@media (min-width:768px) and (max-width:1023px){
 
     /* banner 영역*/
     .wrap{
         width: 100%;
+        border: 1px solid red;
     }
     .main{
         width: 100%;
-        min-height: 100vh;
+        height: calc(100vh - 120px);
         position: relative;
     }
     .prod_name {
-        width: 80%;
+        width: 88%;
         /* height: 100%; */
         /* display: flex; */
         /* justify-content: center; */
         /* align-items: center; */
         position: absolute;
-        top: 25%;
+        top: 32%;
         left: 50%;
         transform: translateX(-50%);
     }
     .prod_img {
         max-height: 800px;
-        width: 30%;
+        width: 45%;
         position: absolute;
-        top: 0;
+        top: 50px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -40,10 +41,10 @@
     .prod_txt {
         text-align: center;
         border: 1px solid red;
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 700;
         position: absolute;
-        bottom: 12%;
+        bottom: 23%;
         left: 50%;
         width: 50%;
         transform: translateX(-50%);
@@ -125,7 +126,7 @@
         margin-bottom: 53px;
     }
     .train_intro .traincont>p{
-        font-size: 30px;
+        font-size: 19px;
         color: #86868B;
     }
     .train_intro .traincont>p b{
@@ -135,7 +136,7 @@
         flex: 1;
         display: flex;
         align-items: center;
-        font-size: 15rem;
+        font-size: 9rem;
         font-weight: bold;
     }
     
@@ -657,5 +658,4 @@
     
 
 }    
-
 

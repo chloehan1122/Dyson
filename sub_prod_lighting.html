@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/sub_prod_lighting.css">
+    <link rel="stylesheet" href="./css/sub_prod_lighting_tab.css">
+    <link rel="stylesheet" href="./css/sub_prod_lighting_mo.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/sub_prod_lighting.js"></script>
@@ -304,14 +306,17 @@
             </div>
         </header>
         <div class="wrap">
-            <main>
+            <section class="main">
                 <div class="prod_name">
                     <img src="./img/solarcyclemorph.png" alt="solarcycle morph">
                 </div>
                 <div class="prod_img">
                     <img src="./img/white-silver-desk-primary.png" alt="제품이미지">
                 </div>
-            </main>
+                <div class="prod_txt">
+                    <p>정밀하게 설계된 광학과 히트 파이프 기술을 통해 60년 동안 조명 품질을 유지합니다.</p>
+                </div>
+            </section>
             <section class="banner black">
                 <div class="building">
                     <div class="elv">
@@ -334,9 +339,8 @@
                                             사용자와 주변 환경에 따라 반응.
                                         </h3>
                                         <p>
-                                            동작 센서가 사용자의 움직임을 감지하여 빛을 제공하므로 <br>
-                                            <b>에너지를 절약</b>합니다. <b>자동 밝기 센서</b>는 주변 환경을 인식하여 <br>
-                                            공간의 조도를 일정하게 유지하는데 도움을 줍니다.
+                                            동작 센서가 사용자의 움직임을 감지하여 빛을 제공하므로
+                                            <b>에너지를 절약</b>합니다. <b>자동 밝기 센서</b>는 주변 환경을 인식하여 공간의 조도를 일정하게 유지하는데 도움을 줍니다.
                                         </p>
                                     </div>
                                 </div>
@@ -534,7 +538,9 @@
                     <div class="btn_swipe swiper-button-prev"></div>
                     <div class="modal"></div>
                     <div class="more_popup">
-                        <a href="#" class="btn_closeP"><img src="./img/close_w.png" alt="닫기"></a>
+                        <div class="modalClose">
+                            <a href="#" class="btn_closeP"><img src="./img/close_w.png" alt="닫기"></a>
+                        </div>
                         <div class="modalInner">
                             <div class="modal_img">
                                 <img src="./img/mood1_m.jpg" alt="후기 이미지">
